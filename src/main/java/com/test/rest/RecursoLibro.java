@@ -27,14 +27,14 @@ public class RecursoLibro {
 
     @GET
     @ApiOperation("Obtiene el listado de todos los libros")
-    public Response list() {
+    public Response recuperarTodo() {
         return Response.ok(this.libroDAO.list()).build();
     }
 
     @GET
     @Path("/{id}")
     @ApiOperation("Obtiene el libro con el id pasado como parámetro")
-    public Response get(@PathParam("id") Long id) {
+    public Response recuperar(@PathParam("id") Long id) {
     	Libro libro = this.libroDAO.get(id);
         if (libro == null) {
             return Response.status(Response.Status.NOT_FOUND).build();
@@ -45,20 +45,20 @@ public class RecursoLibro {
     @POST
     @Consumes("application/json;charset=utf-8")
     @ApiOperation("Almacena el libro pasado como parámetro")
-    public Response save(Libro libro) {
+    public Response salvar(Libro libro) {
         this.libroDAO.save(libro);
-        return Response.ok().build();
+        return Response.ok().build(); //201
     }
 
     @DELETE
     @Path("/{id}")
     @ApiOperation("Elimina el libro con el id pasado por parámetro")
-    public Response delete(@PathParam("id") Long id) {
+    public Response borrar(@PathParam("id") Long id) {
     	Libro libro = this.libroDAO.get(id);
         if (libro == null) {
             return Response.status(Response.Status.NOT_FOUND).build();
         }
         this.libroDAO.delete(libro);
-        return Response.ok().build();
+        return Response.ok().build(); //204
     }
 }

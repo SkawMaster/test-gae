@@ -1,16 +1,16 @@
 'use strict';
 
 angular.module('appLibreria')
-    .controller('libreriaCtrl', function ($scope, libreria) {
+    .controller('libreriaCtrl', function ($scope, libreriaService) {
 
         $scope.cargar = function() {
-        	libreria.cargar(function (listado) {
-                $scope.listadoNombreLibros = listado.nombre;
+        	libreriaService.cargar(function (listado) {
+                $scope.listadoNombreLibros = listado.data;
             });
         }
 
         $scope.guardar = function() {
-        	libreria.guardar($scope.formulario, function() {
+        	libreriaService.guardar($scope.formulario, function() {
                 $scope.cargar();
             });
         }

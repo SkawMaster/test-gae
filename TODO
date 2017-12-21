@@ -19,8 +19,8 @@ Existirá otra pantalla de detalle de un libro, que muestre toda su información
 Tareas:
 ------
 
-1. Definir el modelo de datos para persistir esta información en el datastore
-2. Definir la capa de acceso a datos que permita realizar las operaciones básicas, incluyendo la recuperación
+* 1. Definir el modelo de datos para persistir esta información en el datastore
+* 2. Definir la capa de acceso a datos que permita realizar las operaciones básicas, incluyendo la recuperación
    del listado de libros de manera ordenada
 3. Definir los servicios REST necesarios
 4. Con la documentación de las APIs de Google App Engine, utilizar la que sea necesaria para implementar un servicio REST de búsqueda por texto.
